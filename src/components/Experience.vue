@@ -6,8 +6,8 @@ const experiences = [
     title: 'Desenvolvedor Web Junior',
     type: 'CLT',
     period: 'Dezembro 2025 — Atual',
-    description: 'Descreva aqui as principais atividades, responsabilidades e resultados desta experiência.',
-    tags: ['Tecnologia', 'Ferramenta', 'Método', 'Área'],
+    description: 'Desenvolvimento e manutenção de interfaces frontend e backend, utilizando principalmente Vue.js e React para front-end, e Node.js para backend. Realização de ajustes, melhorias e suporte contínuo em projetos já existentes.',
+    tags: ['Vue.js', 'React', 'Tailwind', 'TypeScript', 'SQL DBX', 'Node.js', 'Bitbucket'],
   },
   {
     company: 'Lefisc Legislação Fiscal',
@@ -15,8 +15,8 @@ const experiences = [
     title: 'Desenvolvedor Web Trainee',
     type: 'CLT',
     period: 'Maio 2025 — Dezembro 2025',
-    description: 'Descreva aqui as principais atividades, responsabilidades e resultados desta experiência.',
-    tags: ['Vue.js', 'SQL DBX', 'Método', 'Área'],
+    description: 'Desenvolvimento e manutenção de interfaces front-end utilizando principalmente o framework Vue.js. Realização de ajustes, melhorias e suporte contínuo em projetos já existentes.',
+    tags: ['Vue.js', 'Tailwind', 'SQL DBX', 'Bitbucket'],
   },
   {
     company: 'Lefisc Legislação Fiscal',
@@ -65,13 +65,13 @@ const experiences = [
           </span>
         </div>
 
-        <h3 class="font-geist text-base font-bold text-slate-100">
+        <h3 class="font-geist text-lg font-bold text-slate-100">
           {{ experience.title }} - <span class="border border-slate-800 px-2 py-1 text-xs text-gray-300 font-code">{{ experience.type }}</span>
         </h3>
-        <p class="mt-2 font-mono text-[10px] text-slate-400">
+        <p class="mt-2 font-mono text-[12px] text-slate-400">
           {{ experience.period }}
         </p>
-        <p class="mt-5 flex-1 font-geist text-xs leading-relaxed text-slate-400">
+        <p class="mt-5 flex-1 font-geist text-xs leading-relaxed text-slate-400 text-justify">
           {{ experience.description }}
         </p>
 
@@ -79,7 +79,7 @@ const experiences = [
           <li
             v-for="tag in experience.tags"
             :key="tag"
-            class="border border-slate-800 px-2 py-1 font-mono text-[10px] text-slate-400"
+            class="border border-slate-800 px-2 py-1 font-geist text-[10px] text-slate-400"
           >
             {{ tag }}
           </li>

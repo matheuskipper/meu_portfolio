@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import About from './About.vue'
 import Experience from './Experience.vue'
 import Projects from './Projects.vue'
@@ -12,10 +12,35 @@ const menuItems = [
   { id: 'contact', label: 'contato', component: Contact },
 ]
 
-const activeItem = ref('about')
+const activeItem = ref('about');
+
+const fraseBoasVindas = 'Bem vindo ao meu portfólio!';
+const textoExibido = ref('');
+const velocidade = 100
+
+const digitar = () => {
+  let i = 0;
+  const intervalo = setInterval(() => {
+  if (i < fraseBoasVindas.length) {
+      textoExibido.value += fraseBoasVindas.charAt(i)
+      i++
+    } else {
+      clearInterval(intervalo)
+    }
+  }, velocidade)
+}
+
+onMounted(() => {
+  digitar();
+})
+
 </script>
 
 <template>
+  <div class="mt-9 mb-4 text-center text-4xl font-tech font-bold text-gray-800">
+    <span class="text-gray-300">{{ textoExibido }}</span>
+    <span class="cursor text-red-400">|</span>
+  </div>
   <main class="mx-auto max-w-6xl px-4 py-10 text-gray-300 sm:px-6 lg:px-8">
     <nav
       aria-label="Portfolio sections"
@@ -52,3 +77,16 @@ const activeItem = ref('about')
     </section>
   </main>
 </template>
+
+<style scoped>
+.cursor {
+  display: inline-block;
+  font-weight: bold;
+  animation: piscar 1s step-end infinite;
+}
+
+@keyframes piscar {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+</style>
