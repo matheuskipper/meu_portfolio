@@ -1,6 +1,6 @@
 <script setup>
 import LogoSenac from '../assets/senac-logo.png'
-import LogoUniritter from '../assets/Logo_Uniritter.png'
+import LogoUniritter from '../assets/logo_Uniritter.png'
 </script>
 
 <template>
