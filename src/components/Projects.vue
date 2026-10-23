@@ -5,7 +5,7 @@ const projects = [
     stack: 'Backend',
     linkGh: 'https://github.com/matheuskipper/API_frete_sistemas_distribuidos',
     description: 'Aplicação desenvolvida para implementação de microsserviços e sistemas distribuídos. O projeto consulta os dados de um endereço a partir de um CEP e calcula o valor do frete com base em regras de negócio internas.',
-    tags: ['Node.js', 'Express', 'Fetch API', 'JSON'],
+    tags: ['Node.js', 'Express', 'API', 'JSON', 'microsserviços'],
     },
     {
     projectName: 'Gerador de Senhas',
@@ -37,7 +37,7 @@ const projects = [
     </div>
     <div class="border-b border-red-400 mb-8"></div>
 
-    <div class="grid gap-7 md:grid-cols-1 cursor-default">
+    <div class="grid gap-7 md:grid-cols-2 cursor-default">
         <article 
         v-for="project in projects" 
         :key="`${project.projectName}`"
@@ -50,7 +50,7 @@ const projects = [
         </div>
 
 
-        <h3 class="font-geist text-base font-bold text-slate-400 mb-2 max-w-4xl">
+        <h3 class="font-geist text-sm font-bold text-slate-400 mb-2 max-w-4xl text-justify">
           {{ project.description }}  
           
         </h3>
@@ -67,9 +67,9 @@ const projects = [
           <li
             v-for="tag in project.tags"
             :key="tag"
-            class="border border-slate-800 px-2 py-1 font-code text-md text-slate-400"
+            class="border border-slate-800 px-1 py-1 font-geist lowercase text-sm text-slate-400"
           >
-            {{ tag }}
+            <span class="text-red-400 font-code text-xs"><</span>{{ tag }}<span class="text-red-400 font-code text-xs">/></span>
           </li>
         </ul>
 

@@ -14,8 +14,9 @@ const menuItems = [
 
 const activeItem = ref('about');
 
-const fraseBoasVindas = 'Bem vindo ao meu portfólio!';
+const fraseBoasVindas = 'Bem-vindo ao meu portfólio!';
 const textoExibido = ref('');
+const mostrarCursor = ref(true);
 const velocidade = 100
 
 const digitar = () => {
@@ -25,7 +26,8 @@ const digitar = () => {
       textoExibido.value += fraseBoasVindas.charAt(i)
       i++
     } else {
-      clearInterval(intervalo)
+      clearInterval(intervalo);
+      mostrarCursor.value = false;
     }
   }, velocidade)
 }
@@ -39,7 +41,7 @@ onMounted(() => {
 <template>
   <div class="mt-9 mb-4 text-center text-4xl font-tech font-bold text-gray-800">
     <span class="text-gray-300">{{ textoExibido }}</span>
-    <span class="cursor text-red-400">|</span>
+    <span v-if="mostrarCursor" class="text-red-400">|</span>
   </div>
   <main class="mx-auto max-w-6xl px-4 py-10 text-gray-300 sm:px-6 lg:px-8">
     <nav
@@ -77,16 +79,3 @@ onMounted(() => {
     </section>
   </main>
 </template>
-
-<style scoped>
-.cursor {
-  display: inline-block;
-  font-weight: bold;
-  animation: piscar 1s step-end infinite;
-}
-
-@keyframes piscar {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-</style>

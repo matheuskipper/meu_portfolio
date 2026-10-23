@@ -10,6 +10,7 @@ const skills = [
   { name: 'CSS3', icon: 'devicon-css3-plain' },
   { name: 'Tailwind CSS', icon: 'devicon-tailwindcss-plain' },
   { name: 'Git', icon: 'devicon-git-plain' },
+  { name: 'FileZilla', icon: 'devicon-filezilla-plain' },
   { name: 'Bitbucket', icon: 'devicon-bitbucket-original' },
   { name: 'GitHub', icon: 'devicon-github-original' },
 ]
@@ -21,7 +22,7 @@ const skills = [
     <!-- Borda inferior -->
     <div class="border-b border-red-400 mb-8"></div>
 
-    <ul class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+    <ul class="grid grid-cols-1 gap-3 xs:grid-cols-1 sm:grid-cols-3 lg:grid-cols-4">
       <li
         v-for="skill in skills"
         :key="skill.name"
