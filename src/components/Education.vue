@@ -1,6 +1,6 @@
 <script setup>
 import LogoSenac from '../assets/senac-logo.png'
-import LogoUniritter from '../assets/logo-uniritter.png'
+import LogoUniritter from '../assets/logo-uniritter-branco.png'
 </script>
 
 <template>
@@ -29,7 +29,7 @@ import LogoUniritter from '../assets/logo-uniritter.png'
         </div>
 
         <div class="mt-8 flex h-16 items-center border-t border-slate-800 pt-4">
-          <img :src="LogoSenac" alt="Logo SENAC" class="max-h-18 w-auto object-contain" />
+          <img :src="LogoSenac" alt="Logo SENAC" class="max-h-20 w-auto object-contain" />
         </div>
       </article>
 
@@ -53,7 +53,7 @@ import LogoUniritter from '../assets/logo-uniritter.png'
         </div>
 
         <div class="mt-8 flex h-16 items-center border-t border-slate-800 pt-4">
-          <img :src="LogoUniritter" alt="Logo UniRitter" class="max-h-14 w-auto object-contain" />
+          <img :src="LogoUniritter" alt="Logo UniRitter" class="max-h-8 w-auto object-contain" />
         </div>
       </article>
     </div>
