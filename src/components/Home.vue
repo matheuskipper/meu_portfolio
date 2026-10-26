@@ -43,7 +43,21 @@ onMounted(() => {
     <span class="text-gray-300">{{ textoExibido }}</span>
     <span v-if="mostrarCursor" class="text-red-400">|</span>
   </div>
-  <main class="mx-auto max-w-6xl px-4 py-10 text-gray-300 sm:px-6 lg:px-8">
+  <main class="mx-auto max-w-6xl px-4 py-6 text-gray-300 sm:px-6 lg:px-8">
+    <div class="flex gap-6 justify-center mb-10">
+      <a 
+      href="/arquivos/cv-ptbr-matheusipper.pdf"  
+      target="_blank" 
+      class="p-2 font-geist text-sm rounded-full border border-red-400 hover:bg-red-400 transition duration-300">
+        Resumo • PT
+      </a>
+      <a 
+      href="/arquivos/cv-en-matheuskipper.pdf" 
+      target="_blank" 
+      class="p-2 font-geist text-sm rounded-full border border-red-400 hover:bg-red-400 transition duration-300">
+        Resume • EN
+      </a>
+    </div>
     <nav
       aria-label="Portfolio sections"
       class="border-b border-slate-800"
