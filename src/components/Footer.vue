@@ -1,6 +1,6 @@
 <template>
   <footer class="mt-10 mb-5 border-t border-red-400 pt-5 text-center text-slate-400">
-    <p class="font-code text-xs">&copy; {{currentYear}} Matheus Kipper. Todos os direitos reservados.</p>
+    <p class="font-code text-xs">&copy; {{currentYear}} Matheus Kipper. {{ t('footer.text') }}</p>
     <!-- social media icons -->
      <div class="mt-4">
         <a href="https://github.com/matheuskipper" target="_blank" class="mx-2 transition-colors duration-200 hover:border-red-400 hover:text-red-400">
@@ -17,5 +17,8 @@
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 const currentYear = new Date().getFullYear()
 </script>

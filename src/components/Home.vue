@@ -1,15 +1,17 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
 import About from './About.vue'
 import Experience from './Experience.vue'
 import Projects from './Projects.vue'
 import Contact from './Contact.vue'
 
+const { t, locale } = useI18n();
 const menuItems = [
-  { id: 'about', label: 'sobre', component: About },
-  { id: 'experience', label: 'experiência', component: Experience },
-  { id: 'projects', label: 'projetos', component: Projects },
-  { id: 'contact', label: 'contato', component: Contact },
+  { id: 'about', label: 'nav.about', component: About },
+  { id: 'experience', label: 'nav.experience', component: Experience },
+  { id: 'projects', label: 'nav.projects', component: Projects },
+  { id: 'contact', label: 'nav.contact', component: Contact },
 ]
 
 const activeItem = ref('about');
@@ -19,10 +21,20 @@ const textoExibido = ref('');
 const mostrarCursor = ref(true);
 const velocidade = 100
 
+let intervalo = null;
+
 const digitar = () => {
+  if (intervalo) clearInterval(intervalo);
+  
+  textoExibido.value = '';
+  mostrarCursor.value = true;
   let i = 0;
-  const intervalo = setInterval(() => {
-  if (i < fraseBoasVindas.length) {
+  
+  // Pega a frase traduzida (certifique-se de ter 'hero.welcome' nos seus arquivos JSON)
+  const fraseBoasVindas = t('greeting.message');
+
+  intervalo = setInterval(() => {
+    if (i < fraseBoasVindas.length) {
       textoExibido.value += fraseBoasVindas.charAt(i)
       i++
     } else {
@@ -31,6 +43,10 @@ const digitar = () => {
     }
   }, velocidade)
 }
+
+watch(locale, () => {
+  digitar();
+});
 
 onMounted(() => {
   digitar();
@@ -76,7 +92,7 @@ onMounted(() => {
               : 'text-slate-600 hover:text-slate-300'"
             @click="activeItem = item.id"
           >
-            <{{ item.label }}/>
+            <{{ t(item.label) }}/>
             <span
               v-if="activeItem === item.id"
               class="absolute inset-x-0 bottom-0 h-px bg-red-500"

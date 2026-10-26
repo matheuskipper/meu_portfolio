@@ -1,5 +1,11 @@
+<script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n();
+</script>
+
 <template>
-    <h1 class="font-geist text-3xl font-bold mb-4"><span class="text-red-400">[</span> contato <span class="text-red-400">]</span></h1>
+    <h1 class="font-geist text-3xl font-bold mb-4"><span class="text-red-400">[</span> {{ t('contact.mainTitle') }} <span class="text-red-400">]</span></h1>
     <!-- Borda inferior -->
     <div class="border-b border-red-400 mb-8"></div>
     <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
@@ -35,7 +41,7 @@
         </a>
     </div>
     <div class="mt-10">
-        <h1 class="font-geist text-2xl font-bold mb-4 text-red-400"><span class="text-gray-300">[</span> outras redes sociais <span class="text-gray-300">]</span> :</h1>
+        <h1 class="font-geist text-2xl font-bold mb-4 text-red-400"><span class="text-gray-300">[</span> {{ t('contact.secondaryTitle') }} <span class="text-gray-300">]</span> :</h1>
         <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
             <a href="https://github.com/matheuskipper" target="_blank" class="h-full">
                 <div class="h-full bg-slate-950/20 border border-slate-800 text-slate-400 p-5 transition-colors duration-500 hover:border-red-400 hover:text-red-400">
